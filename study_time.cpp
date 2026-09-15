@@ -47,6 +47,11 @@ public:
     {
         return StudyTime(minutes + other.minutes);
     }
+
+    bool operator==(const StudyTime &other) const
+    {
+        return minutes == other.minutes;
+    }
     
 };
 
@@ -80,5 +85,13 @@ int main()
     cout << "Another copy: " << anotherCopy.getMinutes() << " minutes" << endl;
     cout << "Assigned: " << assigned.getMinutes() << " minutes" << endl;
     cout << "Final objects created: " << StudyTime::getObjectCount() << endl;
+
+    StudyTime time1(60);
+    StudyTime time2(60);
+    StudyTime time3(30);
+
+    cout << boolalpha;
+    cout << "time1 == time2: " << (time1 == time2) << endl;
+    cout << "time1 == time3: " << (time1 == time3) << endl;
     return 0;
 }
