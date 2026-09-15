@@ -64,12 +64,21 @@ int main()
 
     cout << "Copy: " << readingCopy.getMinutes() << " minutes" << endl;
     cout << "Objects created: " << StudyTime::getObjectCount() << endl;
-    
+
     // STEP 3 main code goes here later
     StudyTime practice(30);
     StudyTime total = reading + practice;
 
     cout << "Total: " << total.getMinutes() << " minutes" << endl;
     cout << "Objects created: " << StudyTime::getObjectCount() << endl;
+
+    StudyTime anotherCopy = reading;
+    StudyTime assigned;
+
+    assigned = reading;
+
+    cout << "Another copy: " << anotherCopy.getMinutes() << " minutes" << endl;
+    cout << "Assigned: " << assigned.getMinutes() << " minutes" << endl;
+    cout << "Final objects created: " << StudyTime::getObjectCount() << endl;
     return 0;
 }
